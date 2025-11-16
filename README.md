@@ -3,7 +3,7 @@
 </p>
 <p align="center"><h1 align="center">Telegram Files</h1></p>
 <p align="center">
-	<em><code>A self-hosted Telegram file downloader for continuous, stable, and unattended downloads.</code></em>
+	<em><code>一个自托管的 Telegram 文件下载器，用于连续、稳定和无人值守的下载。</code></em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/jarvis2f/telegram-files?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
@@ -15,33 +15,33 @@
 </p>
 <br>
 
-## 🔗 Table of Contents
+## 🔗 目录
 
-- [📍 Overview](#-overview)
-- [🧩 Screenshots](#-screenshots)
-- [🚀 Getting Started](#-getting-started)
-- [⌨️ Development](#️-development)
-    - [☑️ Prerequisites](#-prerequisites)
-    - [⚙️ Installation](#-installation)
-- [📌 Project Roadmap](#-project-roadmap)
-- [🔰 Contributing](#-contributing)
-- [🎗 License](#-license)
-- [🆗 FAQs](#-faqs)
-
----
-
-## 📍 Overview
-
-* Seamless file downloads from Telegram channels and groups
-* Support for multiple Telegram accounts to manage and download files simultaneously
-* Pause and resume downloads anytime, with automatic file transfer to designated destinations
-* Instant preview of downloaded videos and images
-* Fully responsive design with mobile-friendly access, Progressive Web App (PWA) support, and offline capabilities
-* Easily fetch files from Telegram shared links
+- [📍 概述](#-概述)
+- [🧩 截图](#-截图)
+- [🚀 开始使用](#-开始使用)
+- [⌨️ 开发](#️-开发)
+    - [☑️ 先决条件](#-先决条件)
+    - [⚙️ 安装](#-安装)
+- [📌 项目路线图](#-项目路线图)
+- [🔰 贡献](#-贡献)
+- [🎗 许可证](#-许可证)
+- [🆗 常见问题](#-常见问题)
 
 ---
 
-## 🧩 Screenshots
+## 📍 概述
+
+*   无缝下载 Telegram 频道和群组中的文件
+*   支持多个 Telegram 帐户同时管理和下载文件
+*   随时暂停和恢复下载，并自动将文件传输到指定目的地
+*   即时预览下载的视频和图像
+*   完全响应式设计，支持移动设备访问、渐进式 Web 应用 (PWA) 和离线功能
+*   轻松从 Telegram 共享链接中获取文件
+
+---
+
+## 🧩 截图
 
 <div align="center">
     <img src="./misc/preview-files-pc.gif" width="70%">
@@ -49,7 +49,7 @@
 </div>
 
 <details closed>
-<summary>More Screenshots</summary>
+<summary>更多截图</summary>
 <div align="center">
     <img src="./misc/screenshot-3.png" align="center" style="width: 300px; height: 500px;">
     <img src="./misc/screenshot-4.png" align="center" style="width: 300px; height: 500px;">
@@ -61,12 +61,11 @@
 </div>
 </details>
 
-## 🚀 Getting Started
+## 🚀 开始使用
 
-Before getting started with telegram-files, you should apply a telegram api id and hash. You can apply for it on
-the [Telegram API](https://my.telegram.org/apps) page.
+在开始使用 telegram-files 之前，您应该申请一个 telegram api id 和 hash。您可以在 [Telegram API](https://my.telegram.org/apps) 页面上申请。
 
-**Using `docker`**
+**使用 `docker`**
 &nbsp; [<img align="center" src="https://img.shields.io/badge/Docker-2CA5E0.svg?style={badge_style}&logo=docker&logoColor=white" />](https://www.docker.com/)
 
 ```shell
@@ -82,53 +81,53 @@ docker run -d \
   ghcr.io/jarvis2f/telegram-files:latest
 ```
 
-**Using `docker-compose`**
+**使用 `docker-compose`**
 
-Copy [docker-compose.yaml](docker-compose.yaml) and [.env.example](.env.example) to your project directory and run the following command:
+将 [docker-compose.yaml](docker-compose.yaml) 和 [.env.example](.env.example) 复制到您的项目目录中，然后运行以下命令：
 
 ```sh
 docker-compose up -d
 ```
 
-**Install on unRaid**
+**在 unRaid 上安装**
 
-On unRaid, install from the Community Repositories by searching for `telegram-files`.
+在 unRaid 上，通过搜索 `telegram-files` 从社区存储库中安装。
 
-> **Important Note:** You should NOT expose the service to the public internet. Because the service is not secure.
+> **重要提示：** 您不应将该服务暴露于公共互联网。因为该服务不安全。
 
 ---
 
-## ⌨️ Development
+## ⌨️ 开发
 
-### ☑️ Prerequisites
+### ☑️ 先决条件
 
-Before getting started with telegram-files, ensure your runtime environment meets the following requirements:
+在开始使用 telegram-files 之前，请确保您的运行时环境满足以下要求：
 
-- **Programming Language:** JDK21,TypeScript
-- **Package Manager:** Gradle,Npm
-- **Container Runtime:** Docker
+- **编程语言：** JDK21,TypeScript
+- **包管理器：** Gradle,Npm
+- **容器运行时：** Docker
 
-### ⚙️ Installation
+### ⚙️ 安装
 
-Install telegram-files using one of the following methods:
+使用以下方法之一安装 telegram-files：
 
-**Build from source:**
+**从源代码构建：**
 
-1. Clone the telegram-files repository:
+1.  克隆 telegram-files 存储库：
 
 ```sh
 git clone https://github.com/jarvis2f/telegram-files
 ```
 
-2. Navigate to the project directory:
+2.  导航到项目目录：
 
 ```sh
 cd telegram-files
 ```
 
-3. Install the project dependencies:
+3.  安装项目依赖项：
 
-**Using `npm`**
+**使用 `npm`**
 &nbsp; [<img align="center" src="https://img.shields.io/badge/npm-CB3837.svg?style={badge_style}&logo=npm&logoColor=white" />](https://www.npmjs.com/)
 
 ```sh
@@ -136,7 +135,7 @@ cd web
 npm install
 ```
 
-**Using `gradle`**
+**使用 `gradle`**
 &nbsp; [<img align="center" src="https://img.shields.io/badge/Gradle-02303A.svg?style={badge_style}&logo=gradle&logoColor=white" />](https://gradle.org/)
 
 ```sh
@@ -144,92 +143,84 @@ cd api
 gradle build
 ```
 
-**Using `docker`**
+**使用 `docker`**
 &nbsp; [<img align="center" src="https://img.shields.io/badge/Docker-2CA5E0.svg?style={badge_style}&logo=docker&logoColor=white" />](https://www.docker.com/)
 
 ```sh
 docker build -t jarvis2f/telegram-files .
 ```
 
-## 📌 Project Roadmap
+## 📌 项目路线图
 
-- ✅ **`Task 1`**: Automatically download files based on set rules.
-- ✅ **`Task 2`**: Download statistics and reports.
-- ✅ **`Task 3`**: Improve Telegram’s login functionality.
-- ✅ **`Task 4`**: Support auto transfer files to other destinations.
-- ✅ **`Task 5`**: File table is optimized using virtual lists.
-- ✅ **`Task 6`**: Preload file information to support responsible searches.
+- ✅ **`任务 1`**: 根据设定的规则自动下载文件。
+- ✅ **`任务 2`**: 下载统计和报告。
+- ✅ **`任务 3`**: 改进 Telegram 的登录功能。
+- ✅ **`任务 4`**: 支持自动将文件传输到其他目的地。
+- ✅ **`任务 5`**: 使用虚拟列表优化文件表。
+- ✅ **`任务 6`**: 预加载文件信息以支持响应式搜索。
 
 ---
 
-## 🔰 Contributing
+## 🔰 贡献
 
-- **💬 [Join the Discussions](https://github.com/jarvis2f/telegram-files/discussions)**: Share your insights, provide
-  feedback, or ask questions.
-- **🐛 [Report Issues](https://github.com/jarvis2f/telegram-files/issues)**: Submit bugs found or log feature requests
-  for the `telegram-files` project.
-- **💡 [Submit Pull Requests](https://github.com/jarvis2f/telegram-files/blob/main/CONTRIBUTING.md)**: Review open PRs,
-  and submit your own PRs.
+- **💬 [加入讨论](https://github.com/jarvis2f/telegram-files/discussions)**: 分享您的见解、提供反馈或提问。
+- **🐛 [报告问题](https://github.com/jarvis2f/telegram-files/issues)**: 提交发现的错误或为 `telegram-files` 项目记录功能请求。
+- **💡 [提交拉取请求](https://github.com/jarvis2f/telegram-files/blob/main/CONTRIBUTING.md)**: 查看开放的 PR，并提交您自己的 PR。
 
 <details closed>
-<summary>Contributing Guidelines</summary>
+<summary>贡献指南</summary>
 
-1. **Fork the Repository**: Start by forking the project repository to your github account.
-2. **Clone Locally**: Clone the forked repository to your local machine using a git client.
-   ```sh
-   git clone https://github.com/jarvis2f/telegram-files
-   ```
-3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
-   ```sh
-   git checkout -b new-feature-x
-   ```
-4. **Make Your Changes**: Develop and test your changes locally.
-5. **Commit Your Changes**: Commit with a clear message describing your updates.
-   ```sh
-   git commit -m 'Implemented new feature x.'
-   ```
-6. **Push to github**: Push the changes to your forked repository.
-   ```sh
-   git push origin new-feature-x
-   ```
-7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and
-   their motivations.
-8. **Review**: Once your PR is reviewed and approved, it will be merged into the main branch. Congratulations on your
-   contribution!
+1.  **Fork 存储库**: 首先将项目存储库 fork 到您的 github 帐户。
+2.  **本地克隆**: 使用 git 客户端将 fork 的存储库克隆到您的本地计算机。
+    ```sh
+    git clone https://github.com/jarvis2f/telegram-files
+    ```
+3.  **创建新分支**: 始终在具有描述性名称的新分支上工作。
+    ```sh
+    git checkout -b new-feature-x
+    ```
+4.  **进行更改**: 在本地开发和测试您的更改。
+5.  **提交更改**: 使用清晰的消息提交，描述您的更新。
+    ```sh
+    git commit -m '实现了新功能 x。'
+    ```
+6.  **推送到 github**: 将更改推送到您的 fork 存储库。
+    ```sh
+    git push origin new-feature-x
+    ```
+7.  **提交拉取请求**: 针对原始项目存储库创建 PR。清楚地描述更改及其动机。
+8.  **审查**: 一旦您的 PR 被审查和批准，它将被合并到主分支中。恭喜您的贡献！
 
 </details>
 
 ---
 
-## 🎗 License
+## 🎗 许可证
 
-This project is protected under the MIT License. For more details,
-refer to the [LICENSE](LICENSE) file.
+该项目受 MIT 许可证保护。有关更多详细信息，请参阅 [LICENSE](LICENSE) 文件。
 
 ---
 
-## 🆗 FAQs
+## 🆗 常见问题
 
-~~**Q.** Can't start the api server, error：`java.lang.UnsatisfiedLinkError: no tdjni in java.library.path`~~
+~~**问：** 无法启动 api 服务器，错误：`java.lang.UnsatisfiedLinkError: no tdjni in java.library.path`~~
 
-~~**A.** Maybe download tdlib failed, you can see the [entrypoint.sh](entrypoint.sh) file, then download tdlib
-manually.~~
+~~**答：** 可能是下载 tdlib 失败，您可以查看 [entrypoint.sh](entrypoint.sh) 文件，然后手动下载 tdlib。~~
 
-**Q.** Web's spoiler is static, how to solve it?
+**问：** Web 的剧透是静态的，如何解决？
 
-**A.** 1. Because `CSS Houdini Paint API` is not supported by all browsers. 2. It is only supported on https.
+**答：** 1. 因为并非所有浏览器都支持 `CSS Houdini Paint API`。 2. 它仅在 https 上受支持。
 <details closed>
-<summary>Use in http environment, you can use the following method to solve it</summary>
+<summary>在 http 环境中使用，您可以使用以下方法解决</summary>
 
-Open the `chrome://flags` page, search for `Insecure origins treated as secure`, and add the address of the web page to
-the list.
+打开 `chrome://flags` 页面，搜索 `Insecure origins treated as secure`，然后将网页地址添加到列表中。
 </details>
 
-**Q.** How to use the telegram-files maintenance tool?
+**问：** 如何使用 telegram-files 维护工具？
 
-**A.** You can use the following command to run the maintenance tool(**before running the command, you should stop telegram-files container**):
+**答：** 您可以使用以下命令运行维护工具（**在运行命令之前，您应该停止 telegram-files 容器**）：
 <details closed>
-<summary>Command</summary>
+<summary>命令</summary>
 
 ```shell
 docker run --rm \
@@ -241,8 +232,8 @@ docker run --rm \
   ghcr.io/jarvis2f/telegram-files:latest ${Maintenance Command}
 ```
 
-**Maintenance Command:**
+**维护命令：**
 
-- `album-caption`: Fixed issue with missing caption for album messages before `0.1.15`.
-- `thumbnail`: Fixed issue with missing clear thumbnail.
+- `album-caption`: 修复了 `0.1.15` 之前相册消息缺少标题的问题。
+- `thumbnail`: 修复了缺少清晰缩略图的问题。
 </details>
