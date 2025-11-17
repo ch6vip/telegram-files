@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { SWRProvider } from "@/components/swr-provider";
@@ -11,7 +11,7 @@ import { TelegramAccountProvider } from "@/hooks/use-telegram-account";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LocalStorageProvider } from "@/hooks/use-local-storage";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Telegram Files",
@@ -48,7 +48,7 @@ export default async function RootLayout({
           />
         )}
       </head>
-      <body className={inter.className}>
+      <body>
         <LocalStorageProvider>
           <ThemeProvider
             attribute="class"
