@@ -71,7 +71,7 @@ export default function AutomationDialog() {
       onSuccess: () => {
         toast({
           variant: "success",
-          title: "Auto settings updated!",
+          title: "自动设置已更新！",
         });
         void reload();
         setEditMode(false);
@@ -119,7 +119,7 @@ export default function AutomationDialog() {
       >
         <DialogHeader>
           <DialogTitle>
-            Update Auto Settings for {chat?.name ?? "Unknown Chat"}
+            更新 {chat?.name ?? "未知聊天"} 的自动设置
           </DialogTitle>
         </DialogHeader>
         <DialogDescription></DialogDescription>
@@ -128,7 +128,7 @@ export default function AutomationDialog() {
             <div className="space-y-4 rounded-md border border-gray-200 p-4 dark:border-gray-700">
               <div className="flex items-center justify-between">
                 <Label className="text-sm font-semibold text-gray-900 dark:text-gray-300">
-                  Auto Preload
+                  自动预加载
                 </Label>
                 <Badge
                   variant="outline"
@@ -139,19 +139,19 @@ export default function AutomationDialog() {
                       : "bg-gray-500 dark:bg-gray-800 dark:text-gray-300",
                   )}
                 >
-                  {chat.auto.preload.enabled ? "Enabled" : "Disabled"}
+                  {chat.auto.preload.enabled ? "已启用" : "已禁用"}
                 </Badge>
               </div>
               {(chat.auto.state & (1 << 1)) != 0 && (
                 <p className="text-xs text-muted-foreground">
-                  All historical files are preloaded.
+                  所有历史文件都已预加载。
                 </p>
               )}
             </div>
             <div className="space-y-4 rounded-md border border-gray-200 p-4 dark:border-gray-700">
               <div className="flex items-center justify-between">
                 <Label className="text-sm font-semibold text-gray-900 dark:text-gray-300">
-                  Auto Download
+                  自动下载
                 </Label>
                 <Badge
                   variant="outline"
@@ -162,12 +162,12 @@ export default function AutomationDialog() {
                       : "bg-gray-500 dark:bg-gray-800 dark:text-gray-300",
                   )}
                 >
-                  {chat.auto.download.enabled ? "Enabled" : "Disabled"}
+                  {chat.auto.download.enabled ? "已启用" : "已禁用"}
                 </Badge>
               </div>
               {(chat.auto.state & (1 << 2)) != 0 && (
                 <p className="text-xs text-muted-foreground">
-                  All historical files are started to be downloaded.
+                  所有历史文件都已开始下载。
                 </p>
               )}
               <div className="space-y-3">
@@ -175,17 +175,17 @@ export default function AutomationDialog() {
                 <div className="rounded-lg bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-800">
                   <div className="flex flex-col space-y-1">
                     <span className="text-xs font-medium text-gray-500">
-                      Filter Keyword
+                      筛选关键词
                     </span>
                     <span className="text-sm text-gray-500 dark:text-gray-300">
-                      {chat.auto.download.rule.query || "No keyword specified"}
+                      {chat.auto.download.rule.query || "未指定关键词"}
                     </span>
                   </div>
                 </div>
 
                 <div className="rounded-lg bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-800">
                   <span className="text-xs font-medium text-gray-500">
-                    File Types
+                    文件类型
                   </span>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {chat.auto.download.rule.fileTypes.length > 0 ? (
@@ -200,7 +200,7 @@ export default function AutomationDialog() {
                       ))
                     ) : (
                       <span className="text-sm text-gray-500 dark:text-gray-300">
-                        No file types selected
+                        未选择文件类型
                       </span>
                     )}
                   </div>
@@ -208,7 +208,7 @@ export default function AutomationDialog() {
 
                 <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-800">
                   <span className="text-xs font-medium text-gray-500">
-                    Download History
+                    下载历史
                   </span>
                   <Badge
                     className={cn(
@@ -218,14 +218,14 @@ export default function AutomationDialog() {
                     )}
                   >
                     {chat.auto.download.rule.downloadHistory
-                      ? "Enabled"
-                      : "Disabled"}
+                      ? "已启用"
+                      : "已禁用"}
                   </Badge>
                 </div>
 
                 <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-800">
                   <span className="text-xs font-medium text-gray-500">
-                    Download Comment Files
+                    下载评论文件
                   </span>
                   <Badge
                     className={cn(
@@ -235,8 +235,8 @@ export default function AutomationDialog() {
                     )}
                   >
                     {chat.auto.download.rule.downloadCommentFiles
-                      ? "Enabled"
-                      : "Disabled"}
+                      ? "已启用"
+                      : "已禁用"}
                   </Badge>
                 </div>
               </div>
@@ -245,7 +245,7 @@ export default function AutomationDialog() {
             <div className="space-y-4 rounded-md border border-gray-200 p-4 dark:border-gray-700">
               <div className="flex items-center justify-between">
                 <Label className="text-sm font-semibold text-gray-900 dark:text-gray-300">
-                  Auto Transfer
+                  自动传输
                 </Label>
                 <Badge
                   variant="outline"
@@ -256,19 +256,19 @@ export default function AutomationDialog() {
                       : "bg-gray-500 dark:bg-gray-800 dark:text-gray-300",
                   )}
                 >
-                  {chat.auto.transfer.enabled ? "Enabled" : "Disabled"}
+                  {chat.auto.transfer.enabled ? "已启用" : "已禁用"}
                 </Badge>
               </div>
               {(chat.auto.state & (1 << 4)) != 0 && (
                 <p className="text-xs text-muted-foreground">
-                  All historical download files are transferred.
+                  所有历史下载文件都已传输。
                 </p>
               )}
               <div className="space-y-3">
                 <div className="rounded-lg bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-800">
                   <div className="flex flex-col space-y-1">
                     <span className="text-xs font-medium text-gray-500">
-                      Destination Folder
+                      目标文件夹
                     </span>
                     <span className="text-sm text-gray-500 dark:text-gray-300">
                       {chat.auto.transfer.rule.destination}
@@ -277,7 +277,7 @@ export default function AutomationDialog() {
                 </div>
                 <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-800">
                   <span className="text-xs text-gray-500 dark:text-gray-300">
-                    Transfer Policy
+                    传输策略
                   </span>
                   <Badge variant="outline" className="font-normal">
                     {chat.auto.transfer.rule.transferPolicy}
@@ -285,7 +285,7 @@ export default function AutomationDialog() {
                 </div>
                 <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-800">
                   <span className="text-xs text-gray-500 dark:text-gray-300">
-                    Duplication Policy
+                    重复策略
                   </span>
                   <Badge variant="outline" className="font-normal">
                     {chat.auto.transfer.rule.duplicationPolicy}
@@ -293,7 +293,7 @@ export default function AutomationDialog() {
                 </div>
                 <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-800">
                   <span className="text-xs text-gray-500 dark:text-gray-300">
-                    Transfer History
+                    传输历史
                   </span>
                   <Badge
                     className={cn(
@@ -303,8 +303,8 @@ export default function AutomationDialog() {
                     )}
                   >
                     {chat.auto.transfer.rule.transferHistory
-                      ? "Enabled"
-                      : "Disabled"}
+                      ? "已启用"
+                      : "已禁用"}
                   </Badge>
                 </div>
               </div>
@@ -316,7 +316,7 @@ export default function AutomationDialog() {
         <DialogFooter className="gap-2">
           {!editMode && chat?.auto ? (
             <Button variant="outline" onClick={() => setEditMode(true)}>
-              Edit
+              编辑
             </Button>
           ) : (
             <>
@@ -325,7 +325,7 @@ export default function AutomationDialog() {
                 onClick={() => setOpen(false)}
                 disabled={debounceIsAutoMutating}
               >
-                Cancel
+                取消
               </Button>
               <Button
                 onClick={() => {
@@ -338,9 +338,9 @@ export default function AutomationDialog() {
                   ) {
                     toast({
                       variant: "warning",
-                      title: "Invalid destination folder",
+                      title: "无效的目标文件夹",
                       description:
-                        "Please enter a valid destination folder path",
+                        "请输入有效的目标文件夹路径",
                     });
                     return;
                   }
@@ -348,7 +348,7 @@ export default function AutomationDialog() {
                 }}
                 disabled={debounceIsAutoMutating}
               >
-                {debounceIsAutoMutating ? "Submitting..." : "Submit"}
+                {debounceIsAutoMutating ? "提交中..." : "提交"}
               </Button>
             </>
           )}

@@ -64,8 +64,8 @@ export default function FileBatchControl({
   const controlButtons = [
     {
       url: "/files/start-download-multiple",
-      label: "Download",
-      tooltip: `Download ${downloadableCounts} selected files`,
+      label: "下载",
+      tooltip: `下载 ${downloadableCounts} 个选定文件`,
       icon: <Download className="mr-2 h-4 w-4" />,
       filter: (file: TelegramFile) => file.downloadStatus === "idle",
       validCount: downloadableCounts,
@@ -73,8 +73,8 @@ export default function FileBatchControl({
     },
     {
       url: "/files/toggle-pause-download-multiple",
-      label: "Continue",
-      tooltip: `Continue ${continuableCounts} paused downloads`,
+      label: "继续",
+      tooltip: `继续 ${continuableCounts} 个暂停的下载`,
       className: "bg-green-500 hover:bg-green-600 text-white",
       icon: <StepForward className="mr-2 h-4 w-4" />,
       filter: (file: TelegramFile) => file.downloadStatus === "paused",
@@ -83,8 +83,8 @@ export default function FileBatchControl({
     },
     {
       url: "/files/toggle-pause-download-multiple",
-      label: "Pause",
-      tooltip: `Pause ${pausableCounts} active downloads`,
+      label: "暂停",
+      tooltip: `暂停 ${pausableCounts} 个活动下载`,
       className: "bg-yellow-500 hover:bg-yellow-600 text-white",
       icon: <Pause className="mr-2 h-4 w-4" />,
       filter: (file: TelegramFile) => file.downloadStatus === "downloading",
@@ -93,8 +93,8 @@ export default function FileBatchControl({
     },
     {
       url: "/files/cancel-download-multiple",
-      label: "Cancel",
-      tooltip: `Cancel ${cancelableCounts} active downloads`,
+      label: "取消",
+      tooltip: `取消 ${cancelableCounts} 个活动下载`,
       className: "bg-red-500 hover:bg-red-600 text-white",
       icon: <SquareX className="mr-2 h-4 w-4" />,
       filter: (file: TelegramFile) => file.downloadStatus === "downloading",
@@ -103,8 +103,8 @@ export default function FileBatchControl({
     },
     {
       url: "/files/remove-multiple",
-      label: "Delete",
-      tooltip: `Delete ${deletableCounts} completed files`,
+      label: "删除",
+      tooltip: `删除 ${deletableCounts} 个已完成的文件`,
       className: "bg-red-500 hover:bg-red-600 text-white",
       icon: <FileX className="mr-2 h-4 w-4" />,
       filter: (file: TelegramFile) => file.downloadStatus === "completed",
@@ -133,8 +133,7 @@ export default function FileBatchControl({
       {selectedFiles.size > 0 && (
         <div className="flex flex-col rounded-lg bg-muted/50 p-4 transition-all duration-300 animate-in slide-in-from-bottom-2 md:flex-row md:items-center md:justify-between">
           <span className="mb-3 text-sm font-medium md:mb-0">
-            {selectedFiles.size} {selectedFiles.size === 1 ? "file" : "files"}{" "}
-            selected
+            已选择 {selectedFiles.size} 个文件
           </span>
           <div className="flex flex-wrap gap-2">
             {loadedFiles.length > 0 && (
@@ -157,7 +156,7 @@ export default function FileBatchControl({
               variant="outline"
               onClick={() => setSelectedFiles(new Set())}
             >
-              Clear Selection
+              清除选择
             </Button>
           </div>
         </div>
@@ -227,8 +226,8 @@ function ControlButton({
       onSuccess: () => {
         setSelectedFiles(new Set());
         toast({
-          title: `${label} action completed`,
-          description: `Successfully processed ${validFiles.length} files.`,
+          title: `${label} 操作已完成`,
+          description: `成功处理 ${validFiles.length} 个文件。`,
           variant: "success",
         });
       },
@@ -283,7 +282,7 @@ function ControlButton({
         <DialogContent className="max-w-xl sm:max-w-md">
           <DialogHeader className="space-y-2">
             <DialogTitle className="text-center text-xl font-semibold">
-              {`Confirm ${label} Action`}
+              {`确认 ${label} 操作`}
             </DialogTitle>
             <div className="flex justify-center">
               {label === "Delete" ? (
@@ -312,7 +311,7 @@ function ControlButton({
 
           <div className="pb-6 pt-2">
             <p className="mb-3 text-center text-sm text-muted-foreground">
-              Are you sure you want to {label.toLowerCase()} the selected files?
+              您确定要对所选文件执行 ${label.toLowerCase()} 操作吗？
             </p>
 
             <div className="mt-4 flex flex-col gap-3">
@@ -320,7 +319,7 @@ function ControlButton({
                 <div className="overflow-hidden rounded-lg border border-green-200 dark:border-green-800">
                   <div className="border-b border-green-200 bg-green-50 px-4 py-2 dark:border-green-800 dark:bg-green-900/20">
                     <span className="text-sm font-medium text-green-800 dark:text-green-300">
-                      Files to process
+                      要处理的文件
                     </span>
                   </div>
                   <div className="flex items-center bg-white p-4 dark:bg-background">
@@ -331,11 +330,10 @@ function ControlButton({
                     </div>
                     <div>
                       <p className="text-sm font-medium">
-                        {validCount} {validCount === 1 ? "file" : "files"} will
-                        be processed
+                        将处理 ${validCount} 个文件
                       </p>
                       <p className="mt-0.5 text-xs text-muted-foreground">
-                        These files are in the correct state for this operation
+                        这些文件处于此操作的正确状态
                       </p>
                     </div>
                   </div>
@@ -346,7 +344,7 @@ function ControlButton({
                 <div className="overflow-hidden rounded-lg border border-red-200 dark:border-red-800">
                   <div className="border-b border-red-200 bg-red-50 px-4 py-2 dark:border-red-800 dark:bg-red-900/20">
                     <span className="text-sm font-medium text-red-800 dark:text-red-300">
-                      Files that will be skipped
+                      将被跳过的文件
                     </span>
                   </div>
                   <div className="flex items-center bg-white p-4 dark:bg-background">
@@ -357,12 +355,10 @@ function ControlButton({
                     </div>
                     <div>
                       <p className="text-sm font-medium">
-                        {invalidCount} {invalidCount === 1 ? "file" : "files"}{" "}
-                        cannot be processed
+                        无法处理 ${invalidCount} 个文件
                       </p>
                       <p className="mt-0.5 text-xs text-muted-foreground">
-                        These files are in an incompatible state for this
-                        operation
+                        这些文件处于此操作不兼容的状态
                       </p>
                     </div>
                   </div>
@@ -374,7 +370,7 @@ function ControlButton({
           <DialogFooter className="gap-3 sm:justify-center">
             <DialogClose asChild>
               <Button variant="outline" className="min-w-24">
-                Cancel
+                取消
               </Button>
             </DialogClose>
             <Button

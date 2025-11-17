@@ -28,13 +28,13 @@ export default function ProxysDialog({
 
   const triggerTooltipContent = useMemo(() => {
     if (!telegramId) {
-      return "You can add proxys for telegram connection.";
+      return "您可以为 telegram 连接添加代理。";
     }
     return (
       <>
-        {isLoading && "Testing network..."}
-        {!isLoading && data?.success && "Successfully connect to telegram"}
-        {!isLoading && !data?.success && "Failed to connect to telegram"}
+        {isLoading && "正在测试网络..."}
+        {!isLoading && data?.success && "成功连接到 telegram"}
+        {!isLoading && !data?.success && "连接到 telegram 失败"}
       </>
     );
   }, [data, isLoading, telegramId]);
@@ -74,7 +74,7 @@ export default function ProxysDialog({
         aria-describedby={undefined}
       >
         <VisuallyHidden>
-          <DialogTitle>Proxys</DialogTitle>
+          <DialogTitle>代理</DialogTitle>
         </VisuallyHidden>
         <div className="mt-3">
           <Proxys telegramId={telegramId} {...proxyProps} />

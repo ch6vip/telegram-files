@@ -16,7 +16,7 @@ export default function AccountPage() {
             </Link>
 
             <h3 className="text-lg font-semibold">
-              Telegram File Manager
+              Telegram 文件管理器
             </h3>
 
             <ThemeToggleButton />

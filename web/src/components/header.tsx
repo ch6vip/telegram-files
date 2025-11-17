@@ -57,7 +57,7 @@ export function Header() {
 
           <div className="flex items-center gap-2">
             {accountDownloadSpeed !== 0 && (
-              <TooltipWrapper content="Current account download speed">
+              <TooltipWrapper content="当前账号下载速度">
                 <div className="flex max-w-20 items-center gap-2 overflow-hidden text-sm text-muted-foreground">
                   <span className="flex-1 text-nowrap">
                     {`${prettyBytes(accountDownloadSpeed, { bits: true })}/s`}
@@ -68,7 +68,7 @@ export function Header() {
             )}
 
             {connectionStatus && (
-              <TooltipWrapper content="WebSocket connection status">
+              <TooltipWrapper content="WebSocket 连接状态">
                 <Badge
                   variant={
                     connectionStatus === "Open" ? "default" : "secondary"

@@ -60,7 +60,7 @@ export default function AutomationForm({
     <div className="space-y-4">
       <div className="space-y-4 rounded-md border border-gray-200 p-4 dark:border-gray-700">
         <div className="flex items-center justify-between">
-          <Label htmlFor="enable-preload">Enable Preload</Label>
+          <Label htmlFor="enable-preload">启用预加载</Label>
           <Switch
             id="enable-preload"
             checked={auto.preload.enabled}
@@ -80,8 +80,7 @@ export default function AutomationForm({
             <div className="flex items-start">
               <span className="mr-3 mt-1.5 h-3 w-2 flex-shrink-0 rounded-full bg-cyan-400"></span>
               <p className="text-sm leading-6 text-gray-700 dark:text-gray-300">
-                This will enable preload for this chat. All files will be
-                loaded, but not downloaded, then you can search offline.
+                这将为此聊天启用预加载。所有文件都将被加载，但不会下载，然后您可以离线搜索。
               </p>
             </div>
           </div>
@@ -89,7 +88,7 @@ export default function AutomationForm({
       </div>
       <div className="space-y-4 rounded-md border border-gray-200 p-4 dark:border-gray-700">
         <div className="flex items-center justify-between">
-          <Label htmlFor="enable-auto-download">Enable Auto Download</Label>
+          <Label htmlFor="enable-auto-download">启用自动下载</Label>
           <Switch
             id="enable-auto-download"
             checked={auto.download.enabled}
@@ -110,22 +109,19 @@ export default function AutomationForm({
               <div className="flex items-start">
                 <span className="mr-3 mt-1.5 h-3 w-2 flex-shrink-0 rounded-full bg-cyan-400"></span>
                 <p className="text-sm leading-6 text-gray-700 dark:text-gray-300">
-                  This will enable auto download for this chat. Files will be
-                  downloaded automatically.
+                  这将为此聊天启用自动下载。文件将自动下载。
                 </p>
               </div>
               <div className="flex items-start">
                 <span className="mr-3 mt-1.5 h-3 w-2 flex-shrink-0 rounded-full bg-cyan-400"></span>
                 <p className="text-sm leading-6 text-gray-700 dark:text-gray-300">
-                  If you enable download history, the files in historical
-                  messages will be downloaded first, and then files in new
-                  messages will be downloaded automatically.
+                  如果启用下载历史记录，将首先下载历史消息中的文件，然后自动下载新消息中的文件。
                 </p>
               </div>
               <div className="flex items-start">
                 <span className="mr-3 mt-1.5 h-3 w-2 flex-shrink-0 rounded-full bg-cyan-400"></span>
                 <p className="text-sm leading-6 text-gray-700 dark:text-gray-300">
-                  Download Order:
+                  下载顺序：
                   <span className="ml-1 rounded bg-blue-100 px-2 text-blue-700 dark:bg-blue-800 dark:text-blue-200">
                     {"Photo -> Video -> Audio -> File"}
                   </span>
@@ -149,7 +145,7 @@ export default function AutomationForm({
       </div>
       <div className="space-y-4 rounded-md border border-gray-200 p-4 dark:border-gray-700">
         <div className="flex items-center justify-between">
-          <Label htmlFor="enable-transfer">Enable Transfer</Label>
+          <Label htmlFor="enable-transfer">启用传输</Label>
           <Switch
             id="enable-transfer"
             checked={auto.transfer.enabled}
@@ -170,8 +166,7 @@ export default function AutomationForm({
               <div className="flex items-start">
                 <span className="mr-3 mt-1.5 h-3 w-2 flex-shrink-0 rounded-full bg-cyan-400"></span>
                 <p className="text-sm leading-6 text-gray-700 dark:text-gray-300">
-                  This will enable preload for this chat. All files will be
-                  loaded, but not downloaded, then you can search offline.
+                  这将为此聊天启用预加载。所有文件都将被加载，但不会下载，然后您可以离线搜索。
                 </p>
               </div>
             </div>
@@ -229,27 +224,27 @@ function DownloadRule({ value, onChange }: DownloadRuleProps) {
     <Accordion type="single" collapsible>
       <AccordionItem value="advanced">
         <AccordionTrigger className="hover:no-underline">
-          Advanced
+          高级
         </AccordionTrigger>
         <AccordionContent>
           <div className="flex flex-col space-y-4 rounded-md border p-4 shadow">
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="filter-keyword">Filter Keyword</Label>
+              <Label htmlFor="filter-keyword">筛选关键词</Label>
               <Input
                 id="filter-keyword"
                 type="text"
                 className="w-full"
-                placeholder="Enter a keyword to filter files"
+                placeholder="输入关键词以筛选文件"
                 value={value.query}
                 onChange={handleQueryChange}
               />
             </div>
 
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="fileTypes">Filter File Types</Label>
+              <Label htmlFor="fileTypes">筛选文件类型</Label>
               <Select onValueChange={handleFileTypeSelect}>
                 <SelectTrigger id="fileTypes">
-                  <SelectValue placeholder="Select File Types" />
+                  <SelectValue placeholder="选择文件类型" />
                 </SelectTrigger>
                 <SelectContent>
                   {["photo", "video", "audio", "file"].map((type) => (
@@ -279,7 +274,7 @@ function DownloadRule({ value, onChange }: DownloadRuleProps) {
 
             <div className="rounded-md border p-4">
               <div className="flex items-center justify-between">
-                <Label htmlFor="download-history">Download History</Label>
+                <Label htmlFor="download-history">下载历史</Label>
                 <Switch
                   id="download-history"
                   checked={value.downloadHistory}
@@ -292,14 +287,13 @@ function DownloadRule({ value, onChange }: DownloadRuleProps) {
                 />
               </div>
               <p className="mt-2 text-xs text-muted-foreground">
-                If enabled, all historical files will be downloaded. Otherwise,
-                only new files will be downloaded.
+                如果启用，将下载所有历史文件。否则，仅下载新文件。
               </p>
             </div>
             <div className="rounded-md border p-4">
               <div className="flex items-center justify-between">
                 <Label htmlFor="download-comment-files">
-                  Download comment files
+                  下载评论文件
                 </Label>
                 <Switch
                   id="download-comment-files"
@@ -337,19 +331,19 @@ function TransferRule({ value, onChange }: TransferRuleProps) {
     <Accordion type="single" collapsible>
       <AccordionItem value="advanced">
         <AccordionTrigger className="hover:no-underline">
-          Advanced
+          高级
         </AccordionTrigger>
         <AccordionContent>
           <div className="flex flex-col space-y-4 rounded-md border p-4 shadow">
             <div className="flex flex-col space-y-2">
               <Label htmlFor="destination">
-                Destination folder for auto transfer
+                自动传输的目标文件夹
               </Label>
               <Input
                 id="destination"
                 type="text"
                 className="w-full"
-                placeholder="Enter a destination folder"
+                placeholder="输入目标文件夹"
                 value={value.destination}
                 onChange={(e) => {
                   handleTransferRuleChange({ destination: e.target.value });
@@ -358,7 +352,7 @@ function TransferRule({ value, onChange }: TransferRuleProps) {
             </div>
 
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="transfer-policy">Transfer Policy</Label>
+              <Label htmlFor="transfer-policy">传输策略</Label>
               <PolicySelect
                 policyType="transfer"
                 value={value.transferPolicy}
@@ -371,7 +365,7 @@ function TransferRule({ value, onChange }: TransferRuleProps) {
             </div>
 
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="duplication-policy">Duplication Policy</Label>
+              <Label htmlFor="duplication-policy">重复策略</Label>
               <PolicySelect
                 policyType="duplication"
                 value={value.duplicationPolicy}
@@ -385,7 +379,7 @@ function TransferRule({ value, onChange }: TransferRuleProps) {
 
             <div className="rounded-md border p-4">
               <div className="flex items-center justify-between">
-                <Label htmlFor="transfer-history">Transfer History</Label>
+                <Label htmlFor="transfer-history">传输历史</Label>
                 <Switch
                   id="transfer-history"
                   checked={value.transferHistory}
@@ -395,8 +389,7 @@ function TransferRule({ value, onChange }: TransferRuleProps) {
                 />
               </div>
               <p className="mt-2 text-xs text-muted-foreground">
-                Transfer files that are already downloaded to the specified
-                location.
+                将已下载的文件传输到指定位置。
               </p>
             </div>
           </div>
@@ -414,53 +407,53 @@ const PolicyLegends: Record<
   }
 > = {
   GROUP_BY_CHAT: {
-    title: "Group by Chat",
+    title: "按聊天分组",
     description: (
       <div className="space-y-2">
         <p className="text-sm">
-          Transfer files to folders based on the chat name.
+          根据聊天名称将文件传输到文件夹。
         </p>
-        <p className="text-xs text-muted-foreground">Example:</p>
+        <p className="text-xs text-muted-foreground">示例：</p>
         <p className="inline-block rounded bg-gray-100 p-1 text-xs text-muted-foreground dark:bg-gray-800 dark:text-gray-300">
-          {"/${Destination Folder}/${Telegram Id}/${Chat Id}/${file}"}
+          {"/${目标文件夹}/${Telegram Id}/${聊天 Id}/${文件}"}
         </p>
       </div>
     ),
   },
   GROUP_BY_TYPE: {
-    title: "Group by Type",
+    title: "按类型分组",
     description: (
       <div className="space-y-2">
         <p className="text-sm">
-          Transfer files to folders based on the file type. <br />
-          All account files will be transferred to the same folder.
+          根据文件类型将文件传输到文件夹。 <br />
+          所有帐户文件都将传输到同一文件夹。
         </p>
-        <p className="text-xs text-muted-foreground">Example:</p>
+        <p className="text-xs text-muted-foreground">示例：</p>
         <p className="inline-block rounded bg-gray-100 p-1 text-xs text-muted-foreground dark:bg-gray-800 dark:text-gray-300">
-          {"/${Destination Folder}/${File Type}/${file}"}
+          {"/${目标文件夹}/${文件类型}/${文件}"}
         </p>
       </div>
     ),
   },
   OVERWRITE: {
-    title: "Overwrite",
+    title: "覆盖",
     description:
-      "If destination exists same name file, move and overwrite the file.",
+      "如果目标存在同名文件，则移动并覆盖该文件。",
   },
   SKIP: {
-    title: "Skip",
+    title: "跳过",
     description:
-      "If destination exists same name file, skip the file, nothing to do.",
+      "如果目标存在同名文件，则跳过该文件，不执行任何操作。",
   },
   RENAME: {
-    title: "Rename",
+    title: "重命名",
     description:
-      "This strategy will rename the file, add a serial number after the file name, and then move the file to the destination folder",
+      "此策略将重命名文件，在文件名后添加序列号，然后将文件移动到目标文件夹",
   },
   HASH: {
-    title: "Hash",
+    title: "哈希",
     description:
-      "Calculate the hash (md5) of the file and compare with the existing file, if the hash is the same, delete the original file and set the local path to the existing file, otherwise, move the file",
+      "计算文件的哈希值 (md5) 并与现有文件进行比较，如果哈希值相同，则删除原始文件并将本地路径设置为现有文件，否则移动文件",
   },
 };
 
@@ -487,10 +480,10 @@ function PolicySelect({ policyType, value, onChange }: PolicySelectProps) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          aria-label="Select a policy"
+          aria-label="选择策略"
           className="w-full justify-between"
         >
-          {value ?? "Select a policy..."}
+          {value ?? "选择策略..."}
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
