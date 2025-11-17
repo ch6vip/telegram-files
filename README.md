@@ -6,11 +6,11 @@
 	<em><code>一个自托管的 Telegram 文件下载器，用于连续、稳定和无人值守的下载。</code></em>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/github/license/jarvis2f/telegram-files?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
-	<img src="https://img.shields.io/github/last-commit/jarvis2f/telegram-files?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-	<img src="https://img.shields.io/github/v/release/jarvis2f/telegram-files?style=default&logo=git&logoColor=white&color=0080ff" alt="release">
-    <a href="https://codecov.io/gh/jarvis2f/telegram-files" > 
-        <img src="https://codecov.io/gh/jarvis2f/telegram-files/graph/badge.svg?token=Y4YN2W8ARV"/> 
+	<img src="https://img.shields.io/github/license/ch6vip/telegram-files?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
+	<img src="https://img.shields.io/github/last-commit/ch6vip/telegram-files?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+	<img src="https://img.shields.io/github/v/release/ch6vip/telegram-files?style=default&logo=git&logoColor=white&color=0080ff" alt="release">
+	   <a href="https://codecov.io/gh/ch6vip/telegram-files" >
+	       <img src="https://codecov.io/gh/ch6vip/telegram-files/graph/badge.svg?token=Y4YN2W8ARV"/>
     </a>
 </p>
 <br>
@@ -116,7 +116,7 @@ docker-compose up -d
 1.  克隆 telegram-files 存储库：
 
 ```sh
-git clone https://github.com/jarvis2f/telegram-files
+git clone https://github.com/ch6vip/telegram-files
 ```
 
 2.  导航到项目目录：
@@ -147,7 +147,7 @@ gradle build
 &nbsp; [<img align="center" src="https://img.shields.io/badge/Docker-2CA5E0.svg?style={badge_style}&logo=docker&logoColor=white" />](https://www.docker.com/)
 
 ```sh
-docker build -t jarvis2f/telegram-files .
+docker build -t ch6vip/telegram-files .
 ```
 
 ## 📌 项目路线图
@@ -163,9 +163,9 @@ docker build -t jarvis2f/telegram-files .
 
 ## 🔰 贡献
 
-- **💬 [加入讨论](https://github.com/jarvis2f/telegram-files/discussions)**: 分享您的见解、提供反馈或提问。
-- **🐛 [报告问题](https://github.com/jarvis2f/telegram-files/issues)**: 提交发现的错误或为 `telegram-files` 项目记录功能请求。
-- **💡 [提交拉取请求](https://github.com/jarvis2f/telegram-files/blob/main/CONTRIBUTING.md)**: 查看开放的 PR，并提交您自己的 PR。
+- **💬 [加入讨论](https://github.com/ch6vip/telegram-files/discussions)**: 分享您的见解、提供反馈或提问。
+- **🐛 [报告问题](https://github.com/ch6vip/telegram-files/issues)**: 提交发现的错误或为 `telegram-files` 项目记录功能请求。
+- **💡 [提交拉取请求](https://github.com/ch6vip/telegram-files/blob/main/CONTRIBUTING.md)**: 查看开放的 PR，并提交您自己的 PR。
 
 <details closed>
 <summary>贡献指南</summary>
@@ -173,7 +173,7 @@ docker build -t jarvis2f/telegram-files .
 1.  **Fork 存储库**: 首先将项目存储库 fork 到您的 github 帐户。
 2.  **本地克隆**: 使用 git 客户端将 fork 的存储库克隆到您的本地计算机。
     ```sh
-    git clone https://github.com/jarvis2f/telegram-files
+    git clone https://github.com/ch6vip/telegram-files
     ```
 3.  **创建新分支**: 始终在具有描述性名称的新分支上工作。
     ```sh
@@ -229,7 +229,7 @@ docker run --rm \
   -e APP_ROOT=${APP_ROOT:-/app/data} \
   -e TELEGRAM_API_ID=${TELEGRAM_API_ID} \
   -e TELEGRAM_API_HASH=${TELEGRAM_API_HASH} \
-  ghcr.io/jarvis2f/telegram-files:latest ${Maintenance Command}
+  ghcr.io/ch6vip/telegram-files:latest ${Maintenance Command}
 ```
 
 **维护命令：**
