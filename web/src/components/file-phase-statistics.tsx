@@ -51,18 +51,18 @@ const formatDate = (dateStr: string, timeRange: TimeRange): string => {
   const date = new Date(dateStr);
 
   switch (timeRange) {
-    case "1": // Last hour
+    case "1": // 过去一小时
       return date.toLocaleTimeString("en-US", {
         hour: "2-digit",
         minute: "2-digit",
       });
-    case "2": // Last day
+    case "2": // 过去一天
       return date.toLocaleTimeString("en-US", {
         hour: "2-digit",
         minute: "2-digit",
       });
-    case "3": // Last week
-    case "4": // Last month
+    case "3": // 过去一周
+    case "4": // 过去一月
       return date.toLocaleDateString("en-US", {
         month: "short",
         day: "numeric",
@@ -75,10 +75,10 @@ interface TelegramStatsProps {
 }
 
 const timeRangeOptions = [
-  { value: "1", label: "1 Hour" },
-  { value: "2", label: "24 Hours" },
-  { value: "3", label: "1 Week" },
-  { value: "4", label: "30 Days" },
+  { value: "1", label: "1 小时" },
+  { value: "2", label: "24 小时" },
+  { value: "3", label: "1 周" },
+  { value: "4", label: "30 天" },
 ];
 
 const axisStyle = {
@@ -94,26 +94,26 @@ const TelegramStats: React.FC<TelegramStatsProps> = ({ telegramId }) => {
   );
 
   if (error) {
-    return <div className="p-4 text-red-500">Failed to load statistics</div>;
+    return <div className="p-4 text-red-500">加载统计数据失败</div>;
   }
 
   if (isLoading || !data) {
-    return <div className="p-4 text-gray-500">Loading statistics...</div>;
+    return <div className="p-4 text-gray-500">正在加载统计数据...</div>;
   }
 
   // Transform speed data for the chart
   const speedChartData = data.speedStats.map((stat) => ({
     time: formatDate(stat.time, timeRange),
-    "Average Speed": stat.data.avgSpeed,
-    "Median Speed": stat.data.medianSpeed,
-    "Max Speed": stat.data.maxSpeed,
-    "Min Speed": stat.data.minSpeed,
+    "平均速度": stat.data.avgSpeed,
+    "中位数速度": stat.data.medianSpeed,
+    "最大速度": stat.data.maxSpeed,
+    "最小速度": stat.data.minSpeed,
   }));
 
   // Transform completion data for the chart
   const completionChartData = data.completedStats.map((stat) => ({
     time: formatDate(stat.time, timeRange),
-    "Completed Downloads": stat.total,
+    "已完成下载": stat.total,
   }));
 
   return (
@@ -124,7 +124,7 @@ const TelegramStats: React.FC<TelegramStatsProps> = ({ telegramId }) => {
           onValueChange={(value: TimeRange) => setTimeRange(value)}
         >
           <SelectTrigger className="w-40">
-            <SelectValue placeholder="Select time range" />
+            <SelectValue placeholder="选择时间范围" />
           </SelectTrigger>
           <SelectContent>
             {timeRangeOptions.map((option) => (
@@ -138,13 +138,13 @@ const TelegramStats: React.FC<TelegramStatsProps> = ({ telegramId }) => {
 
       <Card>
         <CardHeader>
-          <CardTitle className="px-1">Download Speed Over Time</CardTitle>
+          <CardTitle className="px-1">下载速度随时间变化</CardTitle>
         </CardHeader>
         <CardContent className="px-1">
           <div className="h-80">
             {!speedChartData || speedChartData.length === 0 ? (
               <div className="flex h-full items-center justify-center text-gray-500">
-                No data available
+                无可用数据
               </div>
             ) : (
               <ResponsiveContainer width="100%" height="100%">
@@ -182,28 +182,28 @@ const TelegramStats: React.FC<TelegramStatsProps> = ({ telegramId }) => {
                   <Legend wrapperStyle={axisStyle} iconType="circle" />
                   <Area
                     type="monotone"
-                    dataKey="Max Speed"
+                    dataKey="最大速度"
                     stroke="#06b6d4"
                     fill="#06b6d4"
                     fillOpacity={0.6}
                   />
                   <Area
                     type="monotone"
-                    dataKey="Average Speed"
+                    dataKey="平均速度"
                     stroke="#8b5cf6"
                     fill="#8b5cf6"
                     fillOpacity={0.8}
                   />
                   <Area
                     type="monotone"
-                    dataKey="Median Speed"
+                    dataKey="中位数速度"
                     stroke="#f59e0b"
                     fill="#f59e0b"
                     fillOpacity={0.2}
                   />
                   <Area
                     type="monotone"
-                    dataKey="Min Speed"
+                    dataKey="最小速度"
                     stroke="#ec4899"
                     fill="#ec4899"
                     fillOpacity={0.7}
@@ -217,13 +217,13 @@ const TelegramStats: React.FC<TelegramStatsProps> = ({ telegramId }) => {
 
       <Card>
         <CardHeader>
-          <CardTitle className="px-1">Completed Downloads Over Time</CardTitle>
+          <CardTitle className="px-1">已完成下载随时间变化</CardTitle>
         </CardHeader>
         <CardContent className="px-1">
           <div className="h-80">
             {!completionChartData || completionChartData.length === 0 ? (
               <div className="flex h-full items-center justify-center text-gray-500">
-                No data available
+                无可用数据
               </div>
             ) : (
               <ResponsiveContainer width="100%" height="100%">
@@ -254,7 +254,7 @@ const TelegramStats: React.FC<TelegramStatsProps> = ({ telegramId }) => {
                   />
                   <Legend wrapperStyle={axisStyle} iconType="rect" />
                   <Bar
-                    dataKey="Completed Downloads"
+                    dataKey="已完成下载"
                     fill="#299d90"
                     fillOpacity={0.8}
                     maxBarSize={100}

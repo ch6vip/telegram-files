@@ -78,7 +78,7 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
     return (
       <div className="flex items-center space-x-2 rounded-lg bg-white p-4 text-red-600 shadow-md dark:bg-red-50 dark:text-red-400">
         <AlertTriangle className="h-5 w-5" />
-        <span>Failed to load data.</span>
+        <span>加载数据失败。</span>
       </div>
     );
   }
@@ -91,7 +91,7 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
           className="h-5 w-5 animate-spin"
           style={{ strokeWidth: "0.8px" }}
         />
-        <span>Loading...</span>
+        <span>加载中...</span>
       </div>
     );
   }
@@ -112,23 +112,23 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
   // Prepare an array of completed file types with their respective icons
   const completedTypes = [
     {
-      label: "Photo",
+      label: "照片",
       value: photo,
       // eslint-disable-next-line jsx-a11y/alt-text
       icon: <Image className="h-5 w-5 text-blue-500" />,
     },
     {
-      label: "Video",
+      label: "视频",
       value: video,
       icon: <Video className="h-5 w-5 text-green-500" />,
     },
     {
-      label: "Audio",
+      label: "音频",
       value: audio,
       icon: <Music className="h-5 w-5 text-purple-500" />,
     },
     {
-      label: "File",
+      label: "文件",
       value: file,
       icon: <File className="h-5 w-5 text-gray-500" />,
     },
@@ -136,28 +136,28 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
 
   const avgStatFields = [
     {
-      label: "Avg",
+      label: "平均",
       value: prettyBytes(data.speedStats.avgSpeed, { bits: true }) + "/s",
       icon: PauseCircle,
       color: "text-blue-500",
       bgColor: "bg-blue-100",
     },
     {
-      label: "Max",
+      label: "最大",
       value: prettyBytes(data.speedStats.maxSpeed, { bits: true }) + "/s",
       icon: ArrowUp,
       color: "text-green-500",
       bgColor: "bg-green-100",
     },
     {
-      label: "Median",
+      label: "中位数",
       value: prettyBytes(data.speedStats.medianSpeed, { bits: true }) + "/s",
       icon: LineChart,
       color: "text-purple-500",
       bgColor: "bg-purple-100",
     },
     {
-      label: "Min",
+      label: "最小",
       value: prettyBytes(data.speedStats.minSpeed, { bits: true }) + "/s",
       icon: ArrowDown,
       color: "text-red-500",
@@ -171,7 +171,7 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
         <div className="flex items-center space-x-3 border-gray-200">
           <h3 className="text-md flex items-center space-x-2 font-semibold text-gray-700 dark:text-gray-200">
             <CloudDownload className="h-5 w-5 text-blue-600" />
-            <span>Download Statistics</span>
+            <span>下载统计</span>
           </h3>
         </div>
         <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-5">
@@ -179,7 +179,7 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
             <div className="flex items-center space-x-2">
               <FileText className="h-5 w-5 text-gray-600 dark:text-gray-400" />
               <span className="text-sm text-gray-600 dark:text-gray-400">
-                Total Files
+                总文件数
               </span>
             </div>
             <div className="mt-2 text-center text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -190,7 +190,7 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
             <div className="flex items-center space-x-2">
               <Download className="h-5 w-5 text-blue-600" />
               <span className="text-sm text-gray-600 dark:text-gray-400">
-                Downloading
+                下载中
               </span>
             </div>
             <div className="mt-2 text-center text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -201,7 +201,7 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
             <div className="flex items-center space-x-2">
               <PauseCircle className="h-5 w-5 text-yellow-500" />
               <span className="text-sm text-gray-600 dark:text-gray-400">
-                Paused
+                已暂停
               </span>
             </div>
             <div className="mt-2 text-center text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -212,7 +212,7 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
             <div className="flex items-center space-x-2">
               <CheckCircle className="h-5 w-5 text-green-600" />
               <span className="text-sm text-gray-600 dark:text-gray-400">
-                Completed
+                已完成
               </span>
             </div>
             <div className="mt-2 text-center text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -223,7 +223,7 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
             <div className="flex items-center space-x-2">
               <AlertTriangle className="h-5 w-5 text-red-600" />
               <span className="text-sm text-gray-600 dark:text-gray-400">
-                Error
+                错误
               </span>
             </div>
             <div className="mt-2 text-center text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -237,9 +237,9 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
         <div className="flex items-center space-x-3 border-gray-200 dark:border-gray-700">
           <h3 className="text-md text-nowrap flex items-center space-x-2 font-semibold text-gray-700 dark:text-gray-200">
             <Clock className="h-5 w-5 text-yellow-500" />
-            <span>Speed Statistics</span>
+            <span>速度统计</span>
             <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
-              ({data.speedStats.interval / 60} minute interval)
+              （{data.speedStats.interval / 60} 分钟间隔）
             </span>
           </h3>
         </div>
@@ -269,7 +269,7 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
         <div className="flex-1 rounded-lg bg-white p-4 shadow-md dark:bg-gray-900 md:col-span-2">
           <h3 className="text-md flex items-center space-x-2 font-semibold text-gray-700 dark:text-gray-200">
             <CheckCircle className="h-5 w-5 text-green-600" />
-            <span>Completed by Type</span>
+            <span>按类型完成</span>
           </h3>
           <ul className="mt-4 grid grid-cols-2 gap-4">
             {completedTypes.map((type) => (
@@ -294,7 +294,7 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
         <div className="flex-1 rounded-lg bg-white p-4 shadow-md dark:bg-gray-900">
           <h3 className="text-md flex items-center space-x-2 font-semibold text-gray-700 dark:text-gray-200">
             <Network className="h-5 w-5 text-gray-500" />
-            <span>Network Statistics</span>
+            <span>网络统计</span>
           </h3>
           <div className="mt-4 h-full">
             <div className="flex items-center justify-center space-x-2 rounded-lg bg-gray-50 p-4 shadow-sm dark:bg-gray-800">
@@ -321,10 +321,10 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ telegramId }) => {
                   });
                 }}
               >
-                {isResetMutating ? "Resetting..." : "Reset"}
+                {isResetMutating ? "重置中..." : "重置"}
               </Button>
               <p className="text-right text-sm text-gray-400">
-                Since:{" "}
+                自：{" "}
                 {formatDistanceToNow(
                   new Date(data.networkStatistics.sinceDate * 1000),
                   {
